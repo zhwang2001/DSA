@@ -70,8 +70,6 @@ class Node:#used to store data
     def __init__(self, data):
         self.data = data
         self.next = next
-        self.head = None
-        self.tail = None
 
 class linkedList:
     """
@@ -81,7 +79,13 @@ class linkedList:
 
     
     def __init__(self):
-        self.size = -1
+        self.size = 0
+        self.head = None
+        self.tail = None
+
+    def __len__(self):
+        self.size += 1
+        
         
     def isempty(self):
         if self.size == 0:
@@ -93,7 +97,7 @@ class linkedList:
         new_node = Node(data) 
         if self.isempty:
             self.old_node = Node(data)
-         self.old_node.next = new_node
+        self.old_node.next = new_node
         print(self.__len__())
 
 if __name__ == "__main__":
@@ -105,7 +109,6 @@ if __name__ == "__main__":
     ll.add_node(45)
     ll.add_node(33)
     ll.add_node(3)
-    ll.display()
 
 
 class LinkedStack:
@@ -398,14 +401,13 @@ if __name__ == "__main__":
    cqueue.enqueue(17)
    cqueue.enqueue(24)
    cqueue.enqueue(25)
-   cqueue.dequeue()
-   cqueue.dequeue()
-   cqueue.dequeue()
+   #cqueue.dequeue()
+   #cqueue.dequeue()
    print(cqueue.__len__())
-   cqueue.head.data
+   #cqueue.head.data
 
-   print(f"\nthe front of the queue is {cqueue.newhead.data}")
-   print(f"the rear of the queue is {cqueue.tail.data}")
+   #print(f"\nthe front of the queue is {cqueue.newhead.data}")
+   #print(f"the rear of the queue is {cqueue.tail.data}")
 
 
 
@@ -629,52 +631,22 @@ class doublylinkedList(Node):
         elif ind > (self.size // 2) + 1:
             return self._traverse(ind, 'backward')
 
-#ignore
-class Tree: #FIXME
-    def __init__(self, val = None):
-        if val != None:
-            self.val = val
-        else:
-            self.val = None
-            self.left = None
-            self.right = None
+class TreeNode:
+    def __init__(self, data):
+        self.left = None
+        self.right = None
+        self.data = data
 
-    def insert(self, val):
-        if self.val:
-            if val < self.val:
-                if self.left is None:
-                    self.left = Tree(val)
-                else:
-                    self.left.insert(val)
+    def insert(self, data)
+root = TreeNode(10)
+data = [23 ,45, 12, 22, 1]
+for i in data: 
+    root.data = i
 
-            elif val > self.val:
-                if self.right is None:
-                    self.right = Tree(val)
-
-                else:
-                    self.right.insert(val)
-
-        else:
-            self.val = val
-
-    def printValues(self):
-        if self.left:
-            self.left.printValues()
-
-        print(self.val)
-        if self.right:
-            self.right.printValues()
-
-if __name__ == "__main__":
-
-    tree = Tree(20)
-    tree.left = Tree(18)
-    tree.right = Tree(23)
-    tree.insert(19)
-    tree.insert(24)
-    tree.insert(21)
-
-    tree.printValues()
+        
+        
+        
+quit()        
 
 #Binary tree implmentation
 class treeNode:
@@ -685,7 +657,7 @@ class treeNode:
         self.left = None
         
 
-class binaryTree(treeNode):
+class binaryTree(treeNode):#NOTE Without Traversal
 
     def __init__(self, val):
         """
@@ -760,11 +732,12 @@ class binaryTree(treeNode):
         """Used as a counter for insert and depth methods"""
         if display == True:
             print(self.depth)
-        return self.depth += 1 
+        #return self.depth += 1 
 
-    def depth(self, data):#TODO
+    def find_depth(self, data):#TODO
         #traverse until node
         #use _increase_depth()
+        pass
 
     def height(self, display = False):
         self.height = self.degree - self.depth
@@ -782,7 +755,7 @@ class binaryTree(treeNode):
                     self.left == None
                 elif self.val in self.right:
                     self.right == None
-            elif data > self.val
+            elif data > self.val:
                 if self.val in self.left:
                     self.left == None
                 elif self.val in self.right:
@@ -790,8 +763,9 @@ class binaryTree(treeNode):
             else:
                 raise Exception("values must not match values of parent node")
 
-    def index(self, val, display)#TODO
+    def index(self, val, display):#TODO
         #add modify value condition
+        pass
 
 
 

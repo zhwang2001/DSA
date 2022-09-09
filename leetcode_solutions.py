@@ -160,7 +160,7 @@ class Solution:
                 root.right = self.insertIntoBST(root.right, val)
             return root
 root = 20        
-val = 25
+#val = 25
 sol = Solution()
 sol.insertIntoBST(root, 40)
 sol.insertIntoBST(root, 20)
@@ -419,6 +419,7 @@ control i = jump to next position
 
 use s or r to replace text
 press j to join
+shift # to select all words under cursor
 
 #COMBINATIONS
 shift A = go to end of line and insert mode (use with enter to move to next line fast
@@ -426,7 +427,6 @@ shift I = go to begging of line and insert mode
 
 shift V = whole line highlighting visual mode
 v = single character highlting (used in conjunction with w or b or 5 enter)
-
 j = add on to other keys for more functionality
 >
 dj = 2 lines down or 2yy
