@@ -99,7 +99,7 @@ statements. The answer could never been obtained first try
 
 
 class treeNode:
-    def __init__(self, val: None):
+    def __init__(self, val: int):
         self.val = val
         self.right = None
         self.left = None
@@ -108,12 +108,9 @@ class treeNode:
 class Solution_104:
     def maxdepth(self, val):
         self.depth = 0
-        newnode = treeNode(val = val)
-        if newnode.val == None:
-            self.root, self.val = newnode
         """give the root of a binary tree return its maximum depth"""
-        self.pointer = newnode
-        while self.pointer.left or self.pointer.right != None:
+        self.pointer = treeNode(val= val)
+        while self.left or self.right != None:
             if data < self.val:
                 if self.left == None:
                     self.pointer.left = newnode
@@ -132,40 +129,11 @@ class Solution_104:
         self.pointer = self.root
 
 
-#sol = Solution_104()
-#sol.maxdepth(23)
-
-class TreeNode:
-    def __init__(self, val = 0, left = None, right = None):
-        self.val = val
-        self.left = left
-        self.right = right
+sol = Solution_104()
+sol.maxdepth(23)
         
-class Solution:
-    def insertIntoBST(self, root, val: int):
-            """
-            1. If the root is null, we create a new node with a value of val and return it
-            2. if the root is not null we check the value of the root with the value of val. If 
-            th val is less than the root we call the function recursively and pass the left child of the 
-            root as the new root if the val is greater than teh root we call the function recursively and pass
-            the right child of the root as the new root
-            3. We return the root after updating the left or right child of the root
-            """
-            if root == None:
-                root = TreeNode(val)
-                return root
-            if root.val > val:
-                root.left = self.insertIntoBST(root.left, val)
-            else:
-                root.right = self.insertIntoBST(root.right, val)
-            return root
+
         
-root = [40, 20, 60, 10, 30, 50, 70]
-val = 25
-sol = Solution()
-sol.insertIntoBST(root, val)
-
-
 quit()
 class Solution: #FIXME
     def lengthOfLonfgestSubstring(self, s: str) -> int:
