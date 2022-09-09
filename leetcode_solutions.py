@@ -142,7 +142,7 @@ class TreeNode:
         self.right = right
         
 class Solution:
-    def insertIntoBST(self, root, val: int):
+    def insertIntoBST(self, root, data):
             """
             1. If the root is null, we create a new node with a value of val and return it
             2. if the root is not null we check the value of the root with the value of val. If 
@@ -152,18 +152,23 @@ class Solution:
             3. We return the root after updating the left or right child of the root
             """
             if root == None:
-                root = TreeNode(val)
+                root = TreeNode(data)
                 return root
-            if root.val > val:
+            if root.val > data:
                 root.left = self.insertIntoBST(root.left, val)
             else:
                 root.right = self.insertIntoBST(root.right, val)
             return root
-        
-root = [40, 20, 60, 10, 30, 50, 70]
+root = 20        
 val = 25
 sol = Solution()
-sol.insertIntoBST(root, val)
+sol.insertIntoBST(root, 40)
+sol.insertIntoBST(root, 20)
+sol.insertIntoBST(root, 60)
+sol.insertIntoBST(root, 10)
+sol.insertIntoBST(root, 30)
+sol.insertIntoBST(root, 50)
+sol.insertIntoBST(root, 70)
 
 
 quit()
