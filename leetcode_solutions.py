@@ -135,13 +135,13 @@ class Solution_104:
 #sol = Solution_104()
 #sol.maxdepth(23)
 
-class TreeNode:
+class TreeNode:#FIXME
     def __init__(self, val = 0, left = None, right = None):
         self.val = val
         self.left = left
         self.right = right
         
-class Solution:
+class Solution_701:
     def insertIntoBST(self, root, data):
             """
             1. If the root is null, we create a new node with a value of val and return it
@@ -159,22 +159,11 @@ class Solution:
             else:
                 root.right = self.insertIntoBST(root.right, val)
             return root
-root = 20        
-#val = 25
-sol = Solution()
-sol.insertIntoBST(root, 40)
-sol.insertIntoBST(root, 20)
-sol.insertIntoBST(root, 60)
-sol.insertIntoBST(root, 10)
-sol.insertIntoBST(root, 30)
-sol.insertIntoBST(root, 50)
-sol.insertIntoBST(root, 70)
 
 
-quit()
 class Solution: #FIXME
     def lengthOfLonfgestSubstring(self, s: str) -> int:
-        pass 
+        print('lol') 
 
 
 class Solution_125:
@@ -185,17 +174,26 @@ class Solution_125:
     use isalnum() to check if the string contains alpha or numeric characters
     one method replaces isalpha and isnumeric
     use .lower to remove capital letters
+
+    return True if is palindrome else return False
     """
     def isPalindrome(self, s: str) -> bool:
         pal_checker = []
         for letter in s:
-            if letter is isalpha():
+            if letter.isalnum():
                 pal_checker.append(letter.lower())
                 
         if pal_checker[::-1] == pal_checker:
             return True
+            print("it's a palindrome")
         return False
+        print("it's not a palindrome")
 
+sol = Solution_125()
+print(sol.isPalindrome(s = 'racecar'))
+print(sol.isPalindrome(s = 'sdfsdff'))
+print(sol.isPalindrome(s = '23 sdf SSS fds 32'))
+print(sol.isPalindrome(s = '23 SDFADF  sfd SD FDDF'))
 
 
 
