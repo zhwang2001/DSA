@@ -177,8 +177,24 @@ class Solution: #FIXME
         pass 
 
 
+class Solution_125:
+    """A phrase is a palindrome if, after converting all uppercase
+    letters into lowercase letters and removing all non-alphanumeric characters, it
+    reads the same forward and backward. Alphanumeric characters include letters and numbers
 
-
+    use isalnum() to check if the string contains alpha or numeric characters
+    one method replaces isalpha and isnumeric
+    use .lower to remove capital letters
+    """
+    def isPalindrome(self, s: str) -> bool:
+        pal_checker = []
+        for letter in s:
+            if letter is isalpha():
+                pal_checker.append(letter.lower())
+                
+        if pal_checker[::-1] == pal_checker:
+            return True
+        return False
 
 
 
@@ -242,6 +258,7 @@ class linkedlist:
 #git add . tracks all files
 #git status (status of uncommited and tracked files)
 #git stage (staging area after using git add to start tracking file)
+#git revert (revert changes)
 
 #git config user.name "zhwang822" (local configuration)
 #git config user.email "jameszihao.wang@mail.utoronto.ca" (local configuration)
@@ -304,6 +321,9 @@ class linkedlist:
 / search a word
 :dd delete line
 :yy yank a line
+
+'"*yy or "+yy' for copy to system keyboard
+'"*p or "+p' for paste from system keyboard
 
 :p used to yank a word
 :3dd delete 3 lines
