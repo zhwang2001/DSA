@@ -15,24 +15,8 @@ print(f.calculator(56))
 print(f.calculator(12))
 print(f.calculator(3))
 
-#Factorial Calculator
-class Factorial:
-    def calculator(self, n):
-        num = n
-        while n != 1:
-            num = num * (n - 1)
-            n = n - 1
-        return num
+#Factorial Calculator recursive #TODO
 
-f = Factorial()
-print(f.calculator(5))
-print(f.calculator(12))
-print(f.calculator(4))
-print(f.calculator(56))
-print(f.calculator(12))
-print(f.calculator(3))
-    
-quit()
 #Binary tree inorder traversal (recursion)
 class TreeNode:
     def __init__(self, val = 0, left = None, right = None):
@@ -47,7 +31,7 @@ class Solution:
         return self.inorderTraversal(root.left) + [root.val] + self.inorderTraversal(root.right)
 
 
-#TODO Binary tree inroder traversal (iterative)
+#Binary tree inroder traversal (iterative) #TODO
 
 #Reverse Linked List
 class ListNode:
@@ -70,7 +54,7 @@ class Solution(object):#reverse the linked list using a stack
         while stack[-1] == None:
             self.head.next = stack.pop()
             return self.head
-            
+           
 
     '''        
 TypeError: [None, ListNode{val: 1, next: ListNode{val: 2, next: ListNode{val: 3, next: ListNode{val: 4, next: ListNode{val: 5, next: None}}}}}] is not valid value for the expected return type ListNode
