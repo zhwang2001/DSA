@@ -1,3 +1,9 @@
+#Interview
+#write down bullet point steps
+#implement pseudo code
+#implement real code
+
+
 #Factorial Calculator
 class Factorial:
     def calculator(self, n):
