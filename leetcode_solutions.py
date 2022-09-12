@@ -1,3 +1,50 @@
+#Reverse Linked List
+
+class ListNode:
+    def __init__(self, val = 0, next = None):
+        self.val = val
+        self.next = next
+
+class Solution(object):#reverse the linked list using a stack
+    def reverseList(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        self.head, self.tail = head, head
+        stack = [None]
+        while self.head != None:
+            stack.append(self.head.val)
+            self.head = self.head.next
+        self.head = self.tail
+        while stack[-1] == None:
+            self.head.next = stack.pop()
+            return self.head
+            
+            
+
+            
+TypeError: [None, ListNode{val: 1, next: ListNode{val: 2, next: ListNode{val: 3, next: ListNode{val: 4, next: ListNode{val: 5, next: None}}}}}] is not valid value for the expected return type ListNode
+    raise TypeError(str(ret) + " is not valid value for the expected return type ListNode");
+Line 44 in _driver (Solution.py)
+    _driver()
+Line 51 in <module> (Solution.py)
+During handling of the above exception, another exception occurred:
+TypeError: unhashable type: 'list'
+Line 40 in has_cycle (./python3/listnode.py)
+Line 53 in serialize (./python3/listnode.py)
+Line 69 in _serialize (./python3/__serializer__.py)
+    out = ser._serialize(ret, 'ListNode')
+Line 42 in _driver (Solution.py)
+        
+            
+
+
+
+
+
+
+
 class Solution_34(object):
     
     def searchRange(self, nums = list[int], target = int) -> list[int]: 
@@ -193,7 +240,7 @@ sol = Solution_125()
 print(sol.isPalindrome(s = 'racecar'))
 print(sol.isPalindrome(s = 'sdfsdff'))
 print(sol.isPalindrome(s = '23 sdf SSS fds 32'))
-print(sol.isPalindrome(s = '23 SDFADF  sfd SD FDDF'))
+print(sol.isPalindrome(s = ':23 SDFADF  sfd SD FDDF'))
 
 
 
@@ -257,6 +304,12 @@ class linkedlist:
 #git status (status of uncommited and tracked files)
 #git stage (staging area after using git add to start tracking file)
 #git revert (revert changes)
+#git diff --ours
+#git diff --theirs
+#git show
+#git revert
+#gitk (GUI application for git)
+#git blame <filename> (check the changes to a specific file)
 
 #git config user.name "zhwang822" (local configuration)
 #git config user.email "jameszihao.wang@mail.utoronto.ca" (local configuration)
@@ -471,6 +524,11 @@ vimrc configuration guide how to customize your vim code editor with mappings vi
 hilight Cursorcolumn ctermbg = blue cterm = red
 hilight Cursorline ctermbg = blue cterm = red
 
+zz: save and close
+G = go to end of page
+:b <filename> go to file
+:ls use ls in vim command
+:pwd = current directory
 """
 
 
