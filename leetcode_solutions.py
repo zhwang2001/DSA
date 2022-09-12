@@ -21,7 +21,14 @@ print(f.calculator(56))
 print(f.calculator(12))
 print(f.calculator(3))
 
-#Factorial Calculator recursive #TODO
+#Factorial Calculator recursive
+def factorial(n):
+    if n == 0:
+        return 1
+    return n * factorial(n = n - 1)
+
+print(factorial(n = 23))
+print(factorial(n = 12))
 
 #Binary tree inorder traversal (recursion)
 class TreeNode:
