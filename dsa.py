@@ -769,6 +769,22 @@ class binaryTree(treeNode):#NOTE Without Traversal
 
 
 
+#Binary tree inorder traversal (recursion)
+class TreeNode:
+    def __init__(self, val = 0, left = None, right = None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+class Solution:
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        if root is None:
+            return []
+        return self.inorderTraversal(root.left) + [root.val] + self.inorderTraversal(root.right)
+
+
+#Binary tree inorder traversal (iterative) #TODO
+
 
 if __name__ == "__main__":
 
