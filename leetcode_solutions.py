@@ -1,5 +1,55 @@
-#Reverse Linked List
+#Factorial Calculator
+class Factorial:
+    def calculator(self, n):
+        num = n
+        while n != 1:
+            num = num * (n - 1)
+            n = n - 1
+        return num
 
+f = Factorial()
+print(f.calculator(5))
+print(f.calculator(12))
+print(f.calculator(4))
+print(f.calculator(56))
+print(f.calculator(12))
+print(f.calculator(3))
+
+#Factorial Calculator
+class Factorial:
+    def calculator(self, n):
+        num = n
+        while n != 1:
+            num = num * (n - 1)
+            n = n - 1
+        return num
+
+f = Factorial()
+print(f.calculator(5))
+print(f.calculator(12))
+print(f.calculator(4))
+print(f.calculator(56))
+print(f.calculator(12))
+print(f.calculator(3))
+    
+quit()
+#Binary tree inorder traversal (recursion)
+class TreeNode:
+    def __init__(self, val = 0, left = None, right = None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+class Solution:
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        if root is None:
+            return []
+        return self.inorderTraversal(root.left) + [root.val] + self.inorderTraversal(root.right)
+
+
+#TODO Binary tree inroder traversal (iterative)
+
+#Reverse Linked List
 class ListNode:
     def __init__(self, val = 0, next = None):
         self.val = val
@@ -21,9 +71,8 @@ class Solution(object):#reverse the linked list using a stack
             self.head.next = stack.pop()
             return self.head
             
-            
 
-            
+    '''        
 TypeError: [None, ListNode{val: 1, next: ListNode{val: 2, next: ListNode{val: 3, next: ListNode{val: 4, next: ListNode{val: 5, next: None}}}}}] is not valid value for the expected return type ListNode
     raise TypeError(str(ret) + " is not valid value for the expected return type ListNode");
 Line 44 in _driver (Solution.py)
@@ -36,7 +85,7 @@ Line 53 in serialize (./python3/listnode.py)
 Line 69 in _serialize (./python3/__serializer__.py)
     out = ser._serialize(ret, 'ListNode')
 Line 42 in _driver (Solution.py)
-        
+       ''' 
             
 
 
