@@ -3,6 +3,35 @@
 #implement pseudo code
 #implement real code
 
+#maximum subarray:
+#Explanation
+"""
+use Kadane's algorithm
+if the sum is negative then make sum = 0
+there is a variable that keep tracks of the maximum so far
+"""
+class Solution_53:
+    """
+    Given an integer array nums, find the contiguous 
+    subarray (containing at least one number) 
+    which has the largest sum and return its sum.
+    """
+        
+
+    def maxSubArray(self, nums) -> int:
+        cursum, maxsum = 0, min(nums)
+        for integer in nums:
+            maxsum += integer
+            if cursum < 0:
+                cursum = 0
+            if cursum < 0:#do not use elif
+                cursum = 0
+        print(maxsum,"\n")
+                
+
+sol = Solution_53()
+sol.maxSubArray([2, -3, 4, 1, 14, 2])
+
 
 #Best time to buy and sell a stock:
 class Solution_121:
@@ -27,7 +56,7 @@ class Solution_121:
                 right += 1
         print(profit)
 
-sol = Solution()
+sol = Solution_121()
 sol.maxProfit([23, 34, 12, 2, 57, 90])
 sol.maxProfit([2,4, 1])
 sol.maxProfit([3, 4, 5])
