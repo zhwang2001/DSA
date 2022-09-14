@@ -4,6 +4,28 @@
 #implement real code
 
 
+#Best time to buy and sell a stock:
+
+class Solution:
+    def maxProfit(self, prices) -> int:
+        #o(n) run time
+        #o(1) space complexity
+        left, right = 0, 1
+        profit = 0
+        while right < len(prices):
+            if prices[left] < prices[right]:
+                profit = max(profit, prices[right] - prices[left])
+                right += 1
+            else:
+                left = right
+                right += 1
+        print(profit)
+
+sol = Solution()
+sol.maxProfit([23, 34, 12, 2, 57, 90])
+sol.maxProfit([2,4, 1])
+sol.maxProfit([3, 4, 5])
+
 #Factorial Calculator
 class Factorial:
     def calculator(self, n):
@@ -133,7 +155,7 @@ class Solution_206:
     """
      given the head of a singly linked list, reverse the list, and return the reversed list.
      """
-    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    def reverseList(self, head):
         
         if (not head) or (not head.next):
             return head
