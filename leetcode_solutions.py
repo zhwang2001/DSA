@@ -38,7 +38,7 @@ class TreeNode:
         self.right = right
 
 class Solution:
-    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+    def inorderTraversal(self, root) -> list[int]:
         if root is None:
             return []
         return self.inorderTraversal(root.left) + [root.val] + self.inorderTraversal(root.right)
@@ -67,26 +67,60 @@ class Solution(object):#reverse the linked list using a stack
         while stack[-1] == None:
             self.head.next = stack.pop()
             return self.head
-           
+         
+class pointerSolution(ListNode):#Reverse linked list using pointers
+    def __init__(self):
+        self.size = 0
+        self.head = None
+        self.tail = None
+        
+    def addNode(self, val):
+        newnode = ListNode(val)
+        if self.size == 0:
+            self.head = self.tail = newnode #head and tail are both newnode when first created
+        self.size += 1
+        self.tail.next = newnode
+        self.tail = self.tail.next
 
-    '''        
-TypeError: [None, ListNode{val: 1, next: ListNode{val: 2, next: ListNode{val: 3, next: ListNode{val: 4, next: ListNode{val: 5, next: None}}}}}] is not valid value for the expected return type ListNode
-    raise TypeError(str(ret) + " is not valid value for the expected return type ListNode");
-Line 44 in _driver (Solution.py)
-    _driver()
-Line 51 in <module> (Solution.py)
-During handling of the above exception, another exception occurred:
-TypeError: unhashable type: 'list'
-Line 40 in has_cycle (./python3/listnode.py)
-Line 53 in serialize (./python3/listnode.py)
-Line 69 in _serialize (./python3/__serializer__.py)
-    out = ser._serialize(ret, 'ListNode')
-Line 42 in _driver (Solution.py)
-       ''' 
+    def traverse(self):
+        internode = self.head
+        while internode != None:
+            print(f"{internode.val}->", end = '')
+            internode = internode.next
+        print(f"\nSize of list is {self.size}")
+
+
+    def reverse(self):
+        """
+        Pointers: the variables that reference the object (such as curr) references a state of 
+        that object without changing the object itself
+
+        Reverses using 3 pointers without affecting underlying values
+        """
+        curr = self.head
+        prev = None
+        while curr != None:
+            nxt = curr.next #stores the original state of current.next
+            curr.next = prev #changes state,current pointer references previous pointer as next
+            prev = curr #previous pointer is not current
+            curr = nxt #current pointer is not next pointer
+        print('\n\n')
+        while prev != None:
+            print(f"{prev.val}->", end = '')
+            prev = prev.next
+        print("\n\n")
+
             
 
-
-
+ps = pointerSolution()
+ps.addNode(23)
+ps.addNode(12)
+ps.addNode(1)
+ps.addNode(45)
+ps.addNode(14)
+ps.addNode(14)
+ps.traverse()
+ps.reverse()
 
 
 
@@ -404,7 +438,7 @@ class linkedlist:
 
 
 
-
+begging
 
 
 #Vim Cheatsheat
@@ -540,7 +574,7 @@ shift # to select all words under cursor
 
 #COMBINATIONS
 shift A = go to end of line and insert mode (use with enter to move to next line fast
-shift I = go to begging of line and insert mode
+shift I = go to beginning of line and insert mode
 
 shift V = whole line highlighting visual mode
 v = single character highlting (used in conjunction with w or b or 5 enter)
