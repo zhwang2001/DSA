@@ -110,7 +110,6 @@ class pointerSolution(ListNode):#Reverse linked list using pointers
             prev = prev.next
         print("\n\n")
 
-            
 
 ps = pointerSolution()
 ps.addNode(23)
@@ -121,6 +120,29 @@ ps.addNode(14)
 ps.addNode(14)
 ps.traverse()
 ps.reverse()
+
+
+#reverse linked list using recursion #Question 206
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+
+class Solution_206:
+    """
+     given the head of a singly linked list, reverse the list, and return the reversed list.
+     """
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        
+        if (not head) or (not head.next):
+            return head
+        
+        node = self.reverseList(head.next)
+        head.next.next = head
+        head.next = None
+        
+        return node
 
 
 
