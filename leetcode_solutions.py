@@ -3,7 +3,7 @@
 #implement pseudo code
 #implement real code
 
-#Palindrome's with numbers
+#Palindrome's with numbers question 9
 class Solution(object):
     def numpalindrome(self, n: int) -> bool:
         str_list = []
