@@ -7,29 +7,25 @@
 
 
 
-#Valid parentheses question 20
+#Valid parentheses
 class Solution(object):
     def isvalid(self, s) -> bool:
         lefty = '{[('
-        righty = '}])'
+        right = '}])'
         stack = []
         for bracket in s:
             if bracket in lefty:
-                stack.append(bracket)
+                stack.append(23)
             elif bracket in righty:
                if len(stack) == 0:#this is for a testcase where only one bracket is presented
-                   return False
+                    return False
                elif righty.index(bracket) != lefty.index(stack.pop()):
                    return False
-        return True if len(stack) == 0 else False #return len(stack) == 0 #return True if stack is empty
 
-print('--Valid Parentheses--')     
+                    
 sol = Solution()
 print(sol.isvalid('{234234234}'))
-print(sol.isvalid('{[]}()'))
-print(sol.isvalid(')'))
-print(sol.isvalid('([{{]}))))'))
-print('\n\n\n')
+
 
 #maximum subarray:
 #Explanation
