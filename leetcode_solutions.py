@@ -3,9 +3,25 @@
 #implement pseudo code
 #implement real code
 
+#Palindrome's with numbers
+class Solution(object):
+    def numpalindrome(self, n: int) -> bool:
+        str_list = []
+        for num in str(n):
+            str_list.append(num)
+        if str_list[::-1] == str_list:
+            return True
+        return False
 
 
-
+sol = Solution()
+print('--Palindrome Number--')
+print(sol.numpalindrome(n = 123))
+print(sol.numpalindrome(n = 23))
+print(sol.numpalindrome(n = 442244))
+print(sol.numpalindrome(n = 441112211144))
+print(sol.numpalindrome(n = 45))
+print('\n\n\n')
 
 #Valid parentheses question 20
 class Solution(object):
