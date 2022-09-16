@@ -3,6 +3,22 @@
 #implement pseudo code
 #implement real code
 
+#remove duplicates from array
+class Solution(object):
+    def removeduplicate(self, arr: []) -> list:
+        new_list = []
+        for i in arr:
+            if i not in new_list:
+                new_list.append(i)
+        return new_list
+
+sol = Solution()
+print('--remove duplicates--')
+print(sol.removeduplicate([2,3,4,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2]))
+print(sol.removeduplicate([2,5,6,12,33,12,12,12,99999,5,5]))
+print('\n\n\n')
+
+
 #Palindrome's with numbers question 9
 class Solution(object):
     def numpalindrome(self, n: int) -> bool:
@@ -26,6 +42,11 @@ print('\n\n\n')
 #Valid parentheses question 20
 class Solution(object):
     def isvalid(self, s) -> bool:
+        """
+        the trick is to only append the lefty to the stack
+        if the index of righty matches index of lefty than pop stack
+        if len(list) == 0 then return True
+        """
         lefty = '{[('
         righty = '}])'
         stack = []
