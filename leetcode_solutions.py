@@ -3,6 +3,29 @@
 #implement pseudo code
 #implement real code
 
+
+#length of the last word question 58
+class Solution(object): #FIXME
+    def lengthOfLastWord(self, s:str) -> int:
+        """
+        given string s, return the length of the last word
+        (not a good solution becuase fails testcase below)
+        """
+        string_list = []
+        for string in s[::-1].strip(' '):
+            if string == ' ':
+                return len(string_list) - 1
+        if ' ' not in string_list[0]:
+            return len(string_list)
+        if len(string_list) == 1:
+            return 1
+
+
+
+sol = Solution()
+print(sol.lengthOfLastWord('hougaloug'))
+print(sol.lengthOfLastWord('fs sdff sdsdfs sdd ')
+
 #remove duplicates from array
 class Solution(object):
     def removeduplicate(self, arr: []) -> list:
