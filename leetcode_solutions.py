@@ -4,6 +4,29 @@
 #implement real code
 
 
+
+
+#best time to buy and sell stock 2 question 122
+"""
+can buy and sell multiple times within array
+"""
+class Solution(object):
+    def maxProfit(self, prices: list):
+        profit = 0
+        for i in range(1, len(prices)):#starting at 1 is better than 0
+            difference = prices[i] - prices[i - 1] #by making our pointer the current value and not the next we avoid indexing outside of array
+            if difference > 0:
+                profit += difference 
+        return profit
+
+sol = Solution()
+print('--maxprofit--')
+print(sol.maxProfit([2,3,5,2,8,9]))
+print('\n\n\n')
+
+
+
+
 #length of the last word question 58
 class Solution(object): #FIXME
     def lengthOfLastWord(self, s:str) -> int:
@@ -24,7 +47,7 @@ class Solution(object): #FIXME
 
 sol = Solution()
 print(sol.lengthOfLastWord('hougaloug'))
-print(sol.lengthOfLastWord('fs sdff sdsdfs sdd ')
+print(sol.lengthOfLastWord('fs sdff sdsdfs sdd '))
 
 #remove duplicates from array
 class Solution(object):
