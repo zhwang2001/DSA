@@ -3,15 +3,20 @@
 #implement pseudo code
 #implement real code
 
-
+#Find the pivot index question 724
+class Solution(object):
+    def pivotIndex(self, nums):
+        S = sum(nums)
+        leftsum = 0
+        for count, i in enumerate(nums):
 
 
 #best time to buy and sell stock 2 question 122
-"""
-can buy and sell multiple times within array
-"""
 class Solution(object):
     def maxProfit(self, prices: list):
+        """
+        can buy and sell multiple times within array
+        """
         profit = 0
         for i in range(1, len(prices)):#starting at 1 is better than 0
             difference = prices[i] - prices[i - 1] #by making our pointer the current value and not the next we avoid indexing outside of array
