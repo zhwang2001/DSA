@@ -3,8 +3,41 @@
 #implement pseudo code
 #implement real code
 
+#Missing Number questino 268
+class Solution(object):
+    def missingNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        
+        run time complexity = O(n)
+        
+        Given an array nums containing n distinct numbers in the range [0, n], 
+        return the only number in the range that is missing from the array.
+        """
+        nums.sort() #must be sorted
+        length = len(nums)
+        for i in range(length):
+            if 0 not in nums: #written to pass this test case [0]
+                return 0
+            elif nums[i] == nums[-1]: #if we end up getting to last number in list then the missing number can only be number after last
+                return nums[-1] + 1
+            elif nums[i] + 1 != nums[i + 1]: #check if the current number + 1 == 2nd number
+                return nums[i] + 1
 
-#single number question 136
+sol = Solution()
+print('--Missing number--')
+print(sol.missingNumber([0, 1, 3]))
+print(sol.missingNumber([0, 2, 1]))
+print(sol.missingNumber([0, 1, 2]))
+print(sol.missingNumber([1]))
+print(sol.missingNumber([0]))
+print('\n\n\n')
+
+
+
+
+#single number question 136 and single number 2 question 136
 class Solution(object):
     def searchInsert(self, nums):
         """
@@ -21,11 +54,9 @@ class Solution(object):
         of the list will return an empty list instead of an index
         error
         """
-        print(nums[8])
-
         
         for count, integer in enumerate(nums):
-            if integer in nums[count + 1:] or integer in nums[:count]:
+            if integer in nums[count + 1:] or integer in nums[:count]: #checks if there are duplicates of the current index behind or infront of it
                 continue
             else:
                 return integer
@@ -35,6 +66,8 @@ print('--single number--')
 print(sol.searchInsert(nums = [2,2,1,1,3,5,3]))
 print(sol.searchInsert(nums = [2, 3, 4,4,3, 1, 1]))
 print(sol.searchInsert(nums = [2, 3, 4,4, 3, 2,1]))
+print(sol.searchInsert(nums = [2,2, 3, 4,4,4, 3,3, 2,1])) #also works for single number if 3 duplicate list
+print('\n\n\n')
 
 
 
