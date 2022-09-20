@@ -9,6 +9,18 @@ class Solution(object):
         S = sum(nums)
         leftsum = 0
         for count, i in enumerate(nums):
+            rightsum = S - nums[count] - leftsum 
+            if leftsum == rightsum:
+                return count
+            leftsum += i
+        return -1
+
+
+sol = Solution()
+print("--Pivot index--")
+print(sol.pivotIndex([2,3,4,5,0]))
+print(sol.pivotIndex([2,3,4,5,2]))
+print('\n\n\n')
 
 
 #best time to buy and sell stock 2 question 122
