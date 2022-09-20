@@ -4,6 +4,40 @@
 #implement real code
 
 
+#single number question 136
+class Solution(object):
+    def searchInsert(self, nums):
+        """
+        given a non empty array of integers
+        find the element that appears only once when all other
+        elements appear twice
+
+        O(n) time complexity
+
+        trick: use python "in" keyword if the current index
+        is in the list behind us or infront of us
+
+        takes advantage of the fact that slicing out of range
+        of the list will return an empty list instead of an index
+        error
+        """
+        print(nums[8])
+
+        
+        for count, integer in enumerate(nums):
+            if integer in nums[count + 1:] or integer in nums[:count]:
+                continue
+            else:
+                return integer
+
+sol = Solution()
+print('--single number--')
+print(sol.searchInsert(nums = [2,2,1,1,3,5,3]))
+print(sol.searchInsert(nums = [2, 3, 4,4,3, 1, 1]))
+print(sol.searchInsert(nums = [2, 3, 4,4, 3, 2,1]))
+
+
+
 #Search insert position question 35:
 class Solution(object):
     def searchInsert(self, nums, target):
