@@ -3,6 +3,35 @@
 #implement pseudo code
 #implement real code
 
+
+#Search insert position question 35:
+class Solution(object):
+    def searchInsert(self, nums, target):
+        """
+        type nums: list[int]
+        type target: int
+
+        problem:
+        return the target index within the list
+        if the target not in the list return index of where target should be
+
+        single pointer implementation
+        """
+        n = 0
+        while n != len(nums): #we don't do len(nums) - 1 because of [1] target 0 testcase
+            if target == nums[n]:
+                return n
+            elif nums[n] > target:
+                return n
+            elif target > nums[-1]:#special case where the number must be appended to rear [1,3,5,6] target = 7 | previous condition wouldn't #   return correct number
+                return len(nums)
+            n += 1
+
+sol = Solution()
+print("--Search Insert--")
+print(sol.searchInsert([23,45, 65,95], 54))
+print('\n\n\n')
+
 #Find the pivot index question 724
 class Solution(object):
     def pivotIndex(self, nums):
