@@ -3,7 +3,10 @@
 #implement pseudo code
 #implement real code
 
-#Missing Number questino 268
+
+
+
+#Missing Number question 268
 class Solution(object):
     def missingNumber(self, nums):
         """
@@ -69,6 +72,33 @@ print(sol.searchInsert(nums = [2, 3, 4,4, 3, 2,1]))
 print(sol.searchInsert(nums = [2,2, 3, 4,4,4, 3,3, 2,1])) #also works for single number if 3 duplicate list
 print('\n\n\n')
 
+
+#single number 3 question 260
+class Solution(object):
+    def singleNumber(self, nums):
+        """
+        this time there are 2 numbers in the array that don't have duplicate
+        numbers, return the 2 numbers in this format [x, y]
+        
+        constant space complexity
+        O(n) time complexity
+
+        trick is to check behind and after current index to check for duplicates
+        """
+        #NOTE: try with not in to isolate for non duplicates immediatly
+        for count, integer in enumerate(nums):
+            if integer in nums[count + 1:] or integer in nums[:count]:
+                continue
+            else:
+                nums.remove(integer)
+                nums.insert(0, integer)
+        return nums[:2]
+
+sol = Solution()
+print('--single number 3--')
+print(sol.singleNumber([0,1,1,2]))
+print(sol.singleNumber([1,2,1,3,2,5]))
+print('\n\n\n')
 
 
 #Search insert position question 35:
