@@ -22,10 +22,8 @@ class Solution:
     #negatives
 
     #best time complexity and space complexity
-    #tortoise
+    #tortoise and hare algorithm
 
-    #breaking constraints
-    #sorting
     def twopointerfindDuplicate(self, nums):
 
             """
@@ -58,19 +56,23 @@ class Solution:
             # of [1,3,4,2,2] would be 3 which is wrong, instead we return tortoise or hare because it's indecies num[3] and num[4] both 
             #return 2
 
+    
 
-
+    #breaking constraints
+    #sorting
+    def sortingfindDuplicate(self, nums):
+        nums.sort()
+        for integer in range(len(nums)):
+            if nums[integer] == nums[integer - 1]:
+                return integer
 
     #iterate through list and record already visited numbers
-
     #set storage
     def setfindDuplicate(self, nums):
         seen = set()
         for integer in nums:
             if integer in seen: return integer
             seen.add(integer)
-
-
 
     #negatives
     def negativemarkfindDuplicate(self, nums):
@@ -87,6 +89,7 @@ class Solution:
 
         return duplicate
 
+
 sol = Solution()
 print('--find the duplicate using floyd tortoise and hare cycle detection algorithm--')
 print(sol.twopointerfindDuplicate([1,3,4,2,2]))
@@ -99,9 +102,11 @@ print(sol.setfindDuplicate([1,3,4,2,2, 5]))
 print('--find the duplicate using negative mark--')
 print(sol.negativemarkfindDuplicate([1,3,4,2,2]))
 print(sol.negativemarkfindDuplicate([1,3,4,2,2, 5]))
+
+print('--find the duplicate using sorting method--')
+print(sol.sortingfindDuplicate([1,3,4,2,2]))
+print(sol.sortingfindDuplicate([1,3,4,2,2, 5]))
 print('\n\n\n')
-
-
 
 
 #Missing Number question 268
