@@ -5,6 +5,104 @@
 
 
 
+#Find Duplicate Number question 287
+class Solution:
+    """
+    Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.
+
+    There is only one repeated number in nums, return this repeated number.
+
+    You must solve the problem without modifying the array nums and uses only constant extra space.
+
+    """
+    #Methods used
+    #tortoise and hare cycle detection algorithm
+    #sorting
+    #Set storage
+    #negatives
+
+    #best time complexity and space complexity
+    #tortoise
+
+    #breaking constraints
+    #sorting
+    def twopointerfindDuplicate(self, nums):
+
+            """
+            :type nums: List[int]
+            :rtype: int
+            
+            Constraints:
+            Can't use extra space, can't modify nums
+            
+            2 variables tortoise and hare: O(1) constant space complexity
+            O(n) time complexity where n is the number of nodes
+            
+            pigeon hole principle = we have n distinct values /containers and n + 1 values then there will be a duplicate 
+
+            when not using linked list, the values in the array dictate the next index
+            """
+            tortoise = hare = nums[0] #start 1 first index
+
+            while True: #continue until cycle is found, in this case we can always assume a cycle exists
+                tortoise = nums[tortoise]
+                hare = nums[nums[hare]]
+                if tortoise == hare:
+                    break
+            tortoise = nums[0]
+
+            while tortoise != hare: #we continue until the next index nums[tortoise] is equal to duplicate number (2)
+                tortoise = nums[tortoise]
+                hare = nums[hare]#both tortoise and hare must travel at same speed now
+            return tortoise #we don't return num[tortoise] because we return the index of the answer which in the case
+            # of [1,3,4,2,2] would be 3 which is wrong, instead we return tortoise or hare because it's indecies num[3] and num[4] both 
+            #return 2
+
+
+
+
+    #iterate through list and record already visited numbers
+
+    #set storage
+    def setfindDuplicate(self, nums):
+        seen = set()
+        for integer in nums:
+            if integer in seen: return integer
+            seen.add(integer)
+
+
+
+    #negatives
+    def negativemarkfindDuplicate(self, nums):
+        for num in nums:
+            cur = abs(num)
+            if nums[cur] < 0:
+                duplicate = cur
+                break
+            nums[cur] = -nums[cur]
+
+        # Restore numbers
+        for i in range(len(nums)):
+            nums[i] = abs(nums[i])
+
+        return duplicate
+
+sol = Solution()
+print('--find the duplicate using floyd tortoise and hare cycle detection algorithm--')
+print(sol.twopointerfindDuplicate([1,3,4,2,2]))
+print(sol.twopointerfindDuplicate([1,3,4,2,2, 5]))
+
+print('--find the duplicate using set--')
+print(sol.setfindDuplicate([1,3,4,2,2]))
+print(sol.setfindDuplicate([1,3,4,2,2, 5]))
+
+print('--find the duplicate using negative mark--')
+print(sol.negativemarkfindDuplicate([1,3,4,2,2]))
+print(sol.negativemarkfindDuplicate([1,3,4,2,2, 5]))
+print('\n\n\n')
+
+
+
 
 #Missing Number question 268
 class Solution(object):
@@ -99,6 +197,7 @@ print('--single number 3--')
 print(sol.singleNumber([0,1,1,2]))
 print(sol.singleNumber([1,2,1,3,2,5]))
 print('\n\n\n')
+
 
 
 #Search insert position question 35:
@@ -243,11 +342,11 @@ class Solution(object):
             if bracket in lefty:
                 stack.append(bracket)
             elif bracket in righty:
-               if len(stack) == 0:#this is for a testcase where only one bracket is presented
+               if len(stack) == 0:#this is for a testcase where only one right  bracket is presented
                    return False
                elif righty.index(bracket) != lefty.index(stack.pop()):
                    return False
-        return True if len(stack) == 0 else False #return len(stack) == 0 #return True if stack is empty
+        return True if len(stack) == 0 else False #return len(stack) == 0 #return True if stack is empty ONLY CASE WE RETURN TRUE IS IF STACK IS EMPTY, ALL OTHER CASES ARE FALSE
 
 print('--Valid Parentheses--')     
 sol = Solution()
@@ -287,7 +386,7 @@ sol = Solution_53()
 sol.maxSubArray([2, -3, 4, 1, 14, 2])
 
 
-#Best time to buy and sell a stock:
+#Best time to buy and sell a stock question 121:
 class Solution_121:
     def maxProfit(self, prices) -> int:
         """You are given an array prices where prices[i] is the price of a given stock on the ith day.
@@ -295,6 +394,10 @@ class Solution_121:
         You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
 
         Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
+
+        
+        Takes advantage of the fact that we don't have to record the exact locations of where we buy and sell
+        but simply record the maximum profit obtained so far as we interate through the array
         """
                 
         #o(n) run time
