@@ -15,13 +15,14 @@ class Solution:
 
     """
     #Methods used
+
     #tortoise and hare cycle detection algorithm
     #sorting
     #Set storage
     #negatives
 
     #best time complexity and space complexity
-    #tortoise and hare algorithm
+    ##  tortoise and hare algorithm
 
     def twopointerfindDuplicate(self, nums):
 
@@ -58,7 +59,7 @@ class Solution:
     
 
     #breaking constraints
-    #sorting
+    ##  sorting
     def sortingfindDuplicate(self, nums):
         nums.sort()
         for integer in range(len(nums)):
@@ -66,7 +67,7 @@ class Solution:
                 return integer
 
     #iterate through list and record already visited numbers
-    #set storage
+    ##  set storage
     def setfindDuplicate(self, nums):
         seen = set()
         for integer in nums:
