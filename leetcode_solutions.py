@@ -4,7 +4,6 @@
 #implement real code
 
 
-
 #Find Duplicate Number question 287
 class Solution:
     """
@@ -107,6 +106,9 @@ print('--find the duplicate using sorting method--')
 print(sol.sortingfindDuplicate([1,3,4,2,2]))
 print(sol.sortingfindDuplicate([1,3,4,2,2, 5]))
 print('\n\n\n')
+
+
+
 
 
 #Missing Number question 268
