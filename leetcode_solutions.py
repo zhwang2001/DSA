@@ -4,6 +4,29 @@
 #implement real code
 
 
+#remove element question 27
+
+class Solution:
+    """
+    Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The relative order of the elements may be changed.
+    """
+    def removeElement(self, nums, val):
+        """
+        type nums: List[int]
+        type val: int
+        rtype: int
+        """
+        while val in nums:
+            nums.remove(val)
+        return nums
+
+
+
+sol = Solution()
+print('--Remove Element--')
+print(sol.removeElement([2,3,4,2,1,4], 2))
+print(sol.removeElement([2,3,3,2,1,3], 3))
+
 #Rotate Array problem 189
 class Solution:
     """
@@ -26,16 +49,12 @@ class Solution:
             nums.extend(sliced)
             print(nums)
 
-        
-                
-
-
 
 sol = Solution()
 print('--rotate array--')
 sol.rotate([1,2,3,4,5,6,7], 3)
 sol.rotate([1,2], 3)
-sol.rotate([2,3,4,5,1,2,3,4,1,2,3,1,2,3,1,2,3,1,3,1,12,12,12,12,12,141,1515,15], 92000)
+#sol.rotate([2,3,4,5,1,2,3,4,1,2,3,1,2,3,1,2,3,1,3,1,12,12,12,12,12,141,1515,15], 92000)
 print('\n\n\n')
 
 
