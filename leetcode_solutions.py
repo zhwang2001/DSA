@@ -4,6 +4,43 @@
 #implement real code
 
 
+#Rotate Array problem 189
+class Solution:
+    """
+    Given an array, rotate the array to the right by k steps where k is non negative
+
+    Leetcode won't accept this answer even though it's right
+    """
+    def rotate(self, nums, k):
+        """
+        type nums: List[int]
+        type k: int
+        rtype: None (modify nums)
+        """
+        for i in range(k):
+            nums.insert(0, nums.pop())
+            print(nums)
+        if len(nums) > 50000: #lol
+            sliced = nums[:(k*-1)]
+            nums = nums[(k*-1):]
+            nums.extend(sliced)
+            print(nums)
+
+        
+                
+
+
+
+sol = Solution()
+print('--rotate array--')
+sol.rotate([1,2,3,4,5,6,7], 3)
+sol.rotate([1,2], 3)
+sol.rotate([2,3,4,5,1,2,3,4,1,2,3,1,2,3,1,2,3,1,3,1,12,12,12,12,12,141,1515,15], 92000)
+print('\n\n\n')
+
+
+exit()
+
 #Find Duplicate Number question 287
 class Solution:
     """
