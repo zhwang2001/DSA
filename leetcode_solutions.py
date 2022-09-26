@@ -4,8 +4,12 @@
 #implement real code
 
 
-#Contains Duplicate
+#Contains Duplicate question 217
 class Solution(object):
+    """
+    Given an integer array nums, return true if any value appears at 
+    least twice in the array, and return false if every element is distinct.
+    """
     def containsDuplicate(self, nums):
         """
         :type nums: List[int]
@@ -24,6 +28,14 @@ print(sol.containsDuplicate([1,4,5,6,8,9,2,0,0]))
 
 #plus one question 66
 class Solution(object):
+    """
+    You are given a large integer represented as an integer array digits, 
+    where each digits[i] is the ith digit of the integer. The digits are 
+    ordered from most significant to least significant in left-to-right order. 
+    The large integer does not contain any leading 0's.
+
+    Increment the large integer by one and return the resulting array of digits.
+    """
     def plusOne(self, digits):
         """
         :type digits: List[int]
