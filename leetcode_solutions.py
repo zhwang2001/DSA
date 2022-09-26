@@ -3,6 +3,25 @@
 #implement pseudo code
 #implement real code
 
+
+#Contains Duplicate
+class Solution(object):
+    def containsDuplicate(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+        return len(nums) > len(set(nums))
+
+
+sol = Solution()
+print('--Contains Duplicate--')
+print(sol.containsDuplicate([1,2,3,1]))
+print(sol.containsDuplicate([2,3,4,4,4,4,4,4,2,3]))
+print(sol.containsDuplicate([2,3,1,6,8,5,4,1,9,9,9,9,9]))
+print(sol.containsDuplicate([1,2,3,4,2,1,4,1,1]))
+print(sol.containsDuplicate([1,4,5,6,8,9,2,0,0]))
+
 #plus one question 66
 class Solution(object):
     def plusOne(self, digits):
@@ -10,18 +29,21 @@ class Solution(object):
         :type digits: List[int]
         :rtype: List[int]
         """
-        string_list = []
+        s = ''
         for i in digits:
-            string_list.append(str(i))
-        print(string_list)
-        joined = int(''.join(string_list)) + 1
-        print(joined)
-        f_list = []
-        for i in str(joined):
-            f_list.append(i)
-        return f_list
-        
+            s += (str(i))
+        finished = str(int(s) + 1)
+        return finished
+        answer = []
+        for i in finsihed:
+            answer.append(i)
+        return answer
 
+sol = Solution()
+print('--Plus One--')
+print(sol.plusOne([9,9,9]))
+print(sol.plusOne([4,9,1]))
+print(sol.plusOne([4,9,9]))
 
 #remove element question 27
 
