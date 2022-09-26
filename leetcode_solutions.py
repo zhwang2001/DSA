@@ -3,6 +3,25 @@
 #implement pseudo code
 #implement real code
 
+#plus one question 66
+class Solution(object):
+    def plusOne(self, digits):
+        """
+        :type digits: List[int]
+        :rtype: List[int]
+        """
+        string_list = []
+        for i in digits:
+            string_list.append(str(i))
+        print(string_list)
+        joined = int(''.join(string_list)) + 1
+        print(joined)
+        f_list = []
+        for i in str(joined):
+            f_list.append(i)
+        return f_list
+        
+
 
 #remove element question 27
 
