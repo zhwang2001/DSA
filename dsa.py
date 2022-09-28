@@ -1,5 +1,41 @@
 #data structure implementation
 
+
+#NOTE Methods of traversing any array
+#while loop
+def main(array):
+    n = 0
+    storage = array[0] #set this storage variable to the first value within array
+    while array[n] != array[-1]: #while the indexed item does not equal to the last item
+        n += 1
+        storage += array[n] #on the 1st iteration we start with index 1 and can finish at last index without while loop stopping prematurely
+    return storage
+
+main(sdf = [1,2,3])
+
+#while loop with len
+def main2(array):
+    n = 0
+    storage = 0
+    while n != len(array): #don't use -1 because the while loop would end before adding value of last index
+        storage += n
+        n += 1
+    return storage
+
+main2(sdf = [1,2,3])
+
+#for loop
+def main3(array):
+    storage = 0
+    for integer in array:
+        storage += integer
+    return storage
+
+main3(sdf = [1,2,3])
+
+
+
+
 class queue:
     default_length = 10
     
