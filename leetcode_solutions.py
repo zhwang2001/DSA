@@ -3,6 +3,36 @@
 #implement pseudo code
 #implement real code
 
+#Valid Anagram question 242
+class Solution(object):
+    """
+    #NOTE  
+    #this question doesn't require an oxford dictionary as we don't have to check if the 
+    #anagram word is a real word, we can just assume if the letters are the same in both strings after sorting,
+    #then it's an anagram
+
+    Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+    An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, 
+    typically using all the original letters exactly once.
+    """
+    def isAnagram(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        s1 = [i for i in s]
+        s2 =[f for f in t]
+        return sorted(s1) == sorted(s2)
+    
+        #This solution is faster
+        #return collections.Counter(s)==collections.Counter(t)
+
+sol = Solution()
+sol.isAnagram(s = "anagram", t = "nagaram") #True
+sol.isAnagram(s = "rat", t = "fat") #False
+
+
 
 #Contains Duplicate question 217
 class Solution(object):
