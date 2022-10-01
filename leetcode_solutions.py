@@ -35,8 +35,6 @@ print(sol.findDifference([2,5,6,7], [1,2,7,6])) #returns [[5], [1]]
 print('\n\n\n')
 
 
-exit()
-
 
 #Valid Anagram question 242
 class Solution(object):
