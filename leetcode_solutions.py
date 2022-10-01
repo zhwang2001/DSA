@@ -3,6 +3,57 @@
 #implement pseudo code
 #implement real code
 
+#Longest Continuous Increase subsequence
+class Solution(object):
+    """
+    Given an unsorted array of integers nums, return the length 
+    of the longest continuous increasing subsequence (i.e. 
+    subarray). The subsequence must be strictly increasing.
+
+    A continuous increasing subsequence is defined by two 
+    indices l and r (l < r) such that it is [nums[l], nums[l 
+    + 1], ..., nums[r - 1], nums[r]] and for each l <= i < r, nums
+    [i] < nums[i + 1].
+    """
+    
+    def findLengthOfLCIS(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+
+        Explanation:
+        use sliding window / kadane's algorithm
+
+        trick:
+        1. have a variable that resets to 1 everytime
+        the current number is less than previous
+
+        2. have another variable that stores the maximum
+        value after iterating through the entire array
+
+        Time complexity = O(N)
+        Space complexity = O(1)
+        """
+        counter = 1 #init at 1, stores temporary count
+        maxi = 1 #init at 1, stores absolute count
+        length = len(nums)
+        for integer in range(1, length):
+            if nums[integer] > nums[integer - 1]: #start at second number in array compare to previous
+                counter += 1
+                if maxi < counter:
+                    maxi = counter
+            else:
+                counter = 1
+        return maxi
+
+
+sol = Solution()
+print("--longest continuous inreasing substring--")
+print(sol.findLengthOfLCIS([2,3,5,3,6,7,9]))
+print(sol.findLengthOfLCIS([1,3,5,7,4,2,4,3,4,5,6,7,8,9,10]))
+print("\n\n\n")
+
+
 #Find the Difference of Two Arrays question 2215
 class Solution(object):
     """
