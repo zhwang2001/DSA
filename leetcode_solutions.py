@@ -3,7 +3,36 @@
 #implement pseudo code
 #implement real code
 
-#Longest Continuous Increase subsequence
+#Intersection of 2 arrays question 349
+class Solution(object):
+    """
+    Given two integer arrays nums1 and nums2, return an array 
+    of their intersection. Each element in the result must be 
+    unique and you may return the result in any order.
+    """
+    def intersection(self, nums1, nums2):
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: List[int]
+
+        time complexity: O(N)
+        """
+        common = set()
+        for integer in nums1:
+            if integer in nums2:
+                common.add(integer)
+        return common
+
+print('--intersection of two arrays--')
+sol = Solution()
+print(sol.intersection([2,3,4,1,2], [2,3,4,4]))
+print(sol.intersection([1,2,2,1], [1,1]))
+print(sol.intersection([1,4,5,6,7,8,2,3,4,2], [9,9,2,4,6,8,2,4,5,7,1,5,7]))
+print('\n\n\n')
+
+
+#Longest Continuous Increase subsequence question 674
 class Solution(object):
     """
     Given an unsorted array of integers nums, return the length 
@@ -34,8 +63,8 @@ class Solution(object):
         Time complexity = O(N)
         Space complexity = O(1)
         """
-        counter = 1 #init at 1, stores temporary count
-        maxi = 1 #init at 1, stores absolute count
+        maxi = 1
+        counter = 1 #init at 1, stores temporary count maxi = 1 #init at 1, stores absolute count
         length = len(nums)
         for integer in range(1, length):
             if nums[integer] > nums[integer - 1]: #start at second number in array compare to previous
@@ -51,8 +80,8 @@ sol = Solution()
 print("--longest continuous inreasing substring--")
 print(sol.findLengthOfLCIS([2,3,5,3,6,7,9]))
 print(sol.findLengthOfLCIS([1,3,5,7,4,2,4,3,4,5,6,7,8,9,10]))
+print(sol.findLengthOfLCIS([1,4,5,6,8,0,2,4,5,2,3,4,1,2]))
 print("\n\n\n")
-
 
 #Find the Difference of Two Arrays question 2215
 class Solution(object):
@@ -113,9 +142,10 @@ class Solution(object):
         #return collections.Counter(s)==collections.Counter(t)
 
 sol = Solution()
+print("--Valid Anagram--")
 sol.isAnagram(s = "anagram", t = "nagaram") #True
 sol.isAnagram(s = "rat", t = "fat") #False
-
+print('\n\n\n')
 
 
 #Contains Duplicate question 217
@@ -139,6 +169,7 @@ print(sol.containsDuplicate([2,3,4,4,4,4,4,4,2,3]))
 print(sol.containsDuplicate([2,3,1,6,8,5,4,1,9,9,9,9,9]))
 print(sol.containsDuplicate([1,2,3,4,2,1,4,1,1]))
 print(sol.containsDuplicate([1,4,5,6,8,9,2,0,0]))
+print('\n\n\n')
 
 #plus one question 66
 class Solution(object):
