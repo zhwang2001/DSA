@@ -3,6 +3,45 @@
 #implement pseudo code
 #implement real code
 
+#diagnoal difference HACKERRANK day 2
+
+class Solution(object):
+    """
+    Given a 3x3 square matrix, calculate the absolute difference between the sums of its diagonals.
+
+    For example, the square matrix  is shown below:
+
+    1 2 3
+    4 5 6
+    9 8 9     
+    """
+    def diagonalDifference(self, *arr):
+        """
+        time complexity = O(N)
+        Space complexity = O(1)
+        """
+        sum1 = 0
+        sum2 = 0
+        l_index = 0
+        r_index = -1 
+        for i in range(len(arr)):
+            sum1 += arr[i][l_index]
+            l_index += 1
+            sum2 += arr[i][r_index]
+            r_index -= 1
+        subtracted = abs(sum1 - sum2)
+        return subtracted
+
+
+sol = Solution()
+print(sol.diagonalDifference([1,2,3],[4,4,6],[7,8,9]))
+print(sol.diagonalDifference((1,2,3),(3,1,6),(1,8,3)))
+print(sol.diagonalDifference((1,3,2),(4,4,6),(7,8,9)))
+print(sol.diagonalDifference((1,1,0),(4,9,6),(4,8,2)))
+print(sol.diagonalDifference((1,6,3),(4,4,6),(7,8,9)))
+print(sol.diagonalDifference((1,8,2),(4,2,6),(2,8,5)))
+
+exit()
 #Intersection of 2 arrays question 349
 class Solution(object):
     """
