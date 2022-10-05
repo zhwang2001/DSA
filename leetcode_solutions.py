@@ -3,6 +3,39 @@
 #implement pseudo code
 #implement real code
 
+#Happy number question 202
+class Solution(object):
+    """
+    Starting with any positive integer, 
+    replace the number by the sum of the
+    squares of its digits.
+    Repeat the process until the number equals 1 (where 
+    it will stay), or it loops endlessly in a 
+    cycle which does not include 1.
+    Those numbers for which this process ends in 1 are happy.
+    """
+    count = 0
+    def isHappy(self, n):
+        """
+        :type n: int
+        :rtype: bool
+        """
+        sum = 0 
+        self.count += 1
+        for i in str(n):
+            sum += int(i)**2
+        if sum == 1:
+            return True
+        elif self.count == 50:
+            return False
+        return self.isHappy(sum)
+
+sol = Solution()
+print(sol.isHappy(n = 19))
+print(sol.isHappy(n = 23))
+print(sol.isHappy(n = 12))
+print(sol.isHappy(n = 133))
+
 #diagnoal difference HACKERRANK day 2
 
 class Solution(object):
