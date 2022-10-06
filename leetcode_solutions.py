@@ -3,6 +3,29 @@
 #implement pseudo code
 #implement real code
 
+
+#reverise string question 344
+class Solution(object):
+    """
+    Write a function that reverses a string. The input string is given as an array of characters s.
+    You must do this by modifying the input array in-place with O(1) extra memory.
+    """
+    def reverseString(self, s):
+        """
+        :type s: List[str]
+        :rtype: None Do not return anything, modify s in-place instead.
+        """
+        for i in range(len(s) // 2):
+            s[i], s[-i - 1] = s[-i - 1], s[i]#the trick is to assign the first position, the last number, and so on
+        return s
+
+
+sol = Solution()
+print(sol.reverseString(['h','e','l','l','o']))
+print(sol.reverseString(['j','o','h','n','s','o','n']))
+print('\n\n\n')
+
+
 #Happy number question 202
 class Solution(object):
     """
@@ -35,7 +58,7 @@ print(sol.isHappy(n = 19))
 print(sol.isHappy(n = 23))
 print(sol.isHappy(n = 12))
 print(sol.isHappy(n = 133))
-
+print('\n\n\n')
 #diagnoal difference HACKERRANK day 2
 
 class Solution(object):
