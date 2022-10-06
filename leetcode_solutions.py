@@ -3,7 +3,6 @@
 #implement pseudo code
 #implement real code
 
-
 #reverise string question 344
 class Solution(object):
     """
@@ -1161,6 +1160,19 @@ class linkedlist:
 # Hierachal: Trees, Graphs
 
 
+#make a new repositoy and push to main
+echo "# sdfsdf" >> README.md
+git init
+git add Readme.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/zhwang2001/sdfsdf.git
+git push -u origin main
+
+#push existing repository from command line
+git remote add origin https://github.com/zhwang2001/sdfsdf.git
+git branch -M main
+git push -u origin main
 
 
 #Github and Git cheatsheat
