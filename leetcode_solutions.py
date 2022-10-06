@@ -3,8 +3,41 @@
 #implement pseudo code
 #implement real code
 
+#Longest Common Prefix
+class Solution(object):
+    """
+    Write a function to find the longest common prefix string amongst an array of strings.
+    If there is no common prefix, return an empty string
+    
+    strs = ["flower","flow","flight"]
+    """
+    def longestCommonPrefix(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: str
+        
+        O(N) time complexity solution
+        """
+        match = 0
+        
+        for vals in zip(*strs):
+            if len(set(vals)) == 1:
+                match += 1
+            else:
+                break
+        
+        return strs[0][:match]
 
-#Defranging an IP address
+sol = Solution()
+print('--longest common prefix--')
+print(sol.longestCommonPrefix(['flower','flow','flight']))
+print(sol.longestCommonPrefix(['qualjumcomm','qualcomm','qularavekcomm']))#leetcode didn't write a proper failing test case #FIXME
+print(sol.longestCommonPrefix(['wow','sdf','sdfsdfs']))
+print('\n\n\n\n\n\n\n\n\n\n')
+
+
+exit()
+#Defranging an IP address question 1108
 class Solution(object):
     """
     Given a valid (ipv4) ip address, return a defranged version
@@ -15,6 +48,9 @@ class Solution(object):
         """
         :type address: str
         :rtype: str
+
+        O(n) time complexity of join and split
+        Auxillary space complexity
         """
         return '[.]'.join(address.split('.'))
 
@@ -24,8 +60,6 @@ print(Solution().defangIPaddr('1.1.2.3.4.5'))
 print(Solution().defangIPaddr('1.2.2.3.4.6'))
 print('\n\n\n')
 
-quit()
-exit()
 #reverise string question 344
 class Solution(object):
     """
