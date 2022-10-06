@@ -3,6 +3,29 @@
 #implement pseudo code
 #implement real code
 
+
+#Defranging an IP address
+class Solution(object):
+    """
+    Given a valid (ipv4) ip address, return a defranged version
+    of that IP address, A defranged IP address replaces every period
+    "." with "[.]"
+    """
+    def defangIPaddr(self, address):
+        """
+        :type address: str
+        :rtype: str
+        """
+        return '[.]'.join(address.split('.'))
+
+
+print("--defranging an ip address--")
+print(Solution().defangIPaddr('1.1.2.3.4.5'))
+print(Solution().defangIPaddr('1.2.2.3.4.6'))
+print('\n\n\n')
+
+quit()
+exit()
 #reverise string question 344
 class Solution(object):
     """
@@ -1161,18 +1184,18 @@ class linkedlist:
 
 
 #make a new repositoy and push to main
-echo "# sdfsdf" >> README.md
-git init
-git add Readme.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/zhwang2001/sdfsdf.git
-git push -u origin main
+#echo "# sdfsdf" >> README.md
+#git init
+#git add Readme.md
+#git commit -m "first commit"
+#git branch -M main
+#git remote add origin https://github.com/zhwang2001/sdfsdf.git
+#git push -u origin main
 
 #push existing repository from command line
-git remote add origin https://github.com/zhwang2001/sdfsdf.git
-git branch -M main
-git push -u origin main
+#git remote add origin https://github.com/zhwang2001/sdfsdf.git
+#git branch -M main
+#git push -u origin main
 
 
 #Github and Git cheatsheat
