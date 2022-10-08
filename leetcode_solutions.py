@@ -3,7 +3,56 @@
 #implement pseudo code
 #implement real code
 
-#Longest Common Prefix
+#final value of variable after performing operations question 2011
+class Solution(object):
+    """
+    There is a programming language with only four operations and one variable X:
+
+    ++X and X++ increments the value of the variable X by 1.
+    --X and X-- decrements the value of the variable X by 1.
+    Initially, the value of X is 0.
+
+    Given an array of strings operations containing a list of operations, 
+    return the final value of X after performing all the operations.  
+    """
+    def finalValueOperations(self, operations):
+        """
+        :type operations: List[str]
+        :rtype: int
+        """
+
+        #O(N) slow solution
+        #O(1) slow solution
+
+        output = 0
+        for string in operations:
+            if "--X" == string or "X--" == string:
+                output -= 1
+            elif "++X" == string or "X++" == string:
+                output += 1
+        print(output)
+
+        #O(N) slightly faster solution and more pythonic
+        #O(1) space compelxity
+
+        dicindex = {"++X" : 1, "X++": 1, "X--":-1, "--X":-1}
+        print(sum(dicindex[value] for value in operations))
+        
+        #O(N) kind of fast solution and also python    
+        #O(1) space complexity
+
+        joined = "".join(operations)
+        print((joined.count("++") - joined.count("--")))
+        
+
+sol = Solution()
+print("--find value after operations--")
+print(sol.finalValueOperations(["--X","X++","X++"]))
+print(sol.finalValueOperations(["++X","X++","X++"]))
+print(sol.finalValueOperations(["--X","X--","X--"]))
+print('\n\n\n')
+
+#Longest Common Prefix question 14
 class Solution(object):
     """
     Write a function to find the longest common prefix string amongst an array of strings.
