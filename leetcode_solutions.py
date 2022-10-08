@@ -3,6 +3,38 @@
 #implement pseudo code
 #implement real code
 
+#Maximum Number of Words found in sentences
+class Solution(object):
+    """
+    A sentence is a list of words that are separated by a single space with no leading or trailing spaces.
+
+    You are given an array of strings sentences, where each sentences[i] represents a single sentence.
+
+    Return the maximum number of words that appear in a single sentence.
+    """
+
+    def mostWordsFound(self, sentences):
+        """
+        :type sentences: List[str]
+        :rtype: int
+
+        O(N) time complexity
+        O(N) space complexity
+        """
+        maxi = 0
+        for sentence in sentences:
+            maxi = max(maxi, len(sentence.split(' ')))
+        return maxi
+
+
+sol = Solution()
+print('--most words found--')
+print(sol.mostWordsFound(['i love cheese', 'i eat sandwhich', 'birds came from dinosaurs']))
+print(sol.mostWordsFound(['time and space complexity of split', 'when will I get an internship', 'pithon']))
+print('\n\n\n')
+
+
+
 #final value of variable after performing operations question 2011
 class Solution(object):
     """
@@ -85,7 +117,6 @@ print(sol.longestCommonPrefix(['wow','sdf','sdfsdfs']))
 print('\n\n\n\n\n\n\n\n\n\n')
 
 
-exit()
 #Defranging an IP address question 1108
 class Solution(object):
     """
@@ -202,7 +233,6 @@ print(sol.diagonalDifference((1,1,0),(4,9,6),(4,8,2)))
 print(sol.diagonalDifference((1,6,3),(4,4,6),(7,8,9)))
 print(sol.diagonalDifference((1,8,2),(4,2,6),(2,8,5)))
 
-exit()
 #Intersection of 2 arrays question 349
 class Solution(object):
     """
