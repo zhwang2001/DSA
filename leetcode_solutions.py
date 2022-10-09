@@ -3,6 +3,37 @@
 #implement pseudo code
 #implement real code
 
+
+class Solution(object):
+    """
+    You are given a string s and an integer array indices of the same length. 
+    The string s will be shuffled such that the character at the ith position moves to indices[i] in the shuffled string.
+    Return the shuffled string.
+
+    Input: s = "codeleet", indices = [4,5,6,7,0,2,1,3]
+    output: "leetcode"
+    """
+    def restoreString(self, s, indices):
+        """
+        :type s: str
+        :type indices: List[int]
+        :rtype: str
+        
+        O(N) time complexity
+        O(N) space complexity
+        """
+        l = len(s)*[""] #create k number of arrays
+        for i in indices:
+            l[i] = s[indices.index(i)]
+        return ''.join(l)
+
+sol = Solution()
+print('--shuffle string--')
+print(sol.restoreString("codeleet", [4,5,6,7,0,2,1,3]))
+print(sol.restoreString("abc",[0,1,2]))
+print('\n\n\n')
+
+
 #Maximum Number of Words found in sentences question 2114
 class Solution(object):
     """
