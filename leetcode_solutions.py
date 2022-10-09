@@ -4,6 +4,34 @@
 #implement real code
 
 
+#Sorting the Sentence
+class Solution(object):
+    """
+    A sentence is a list of words that are separated by a single space with no leading or trailing spaces. Each word consists of lowercase and uppercase English letters.
+    A sentence can be shuffled by appending the 1-indexed word position to each word then rearranging the words in the sentence.
+    For example, the sentence "This is a sentence" can be shuffled as "sentence4 a3 is2 This1" or "is2 sentence4 This1 a3".
+    Given a shuffled sentence s containing no more than 9 words, reconstruct and return the original sentence.
+    """
+    def sortSentence(self, s):
+        """
+        :type s: str
+        :rtype: str
+        
+        time complexity = O(N)
+        """
+        fea = s.split(' ')
+        l = [""] * len(fea)
+        for string in (fea):
+            l[int(string[-1]) - 1] = string[:-1]
+        f = ' '.join(l)
+        return f
+        
+sol = Solution()
+print('--find the difference--')
+print(sol.sortSentence('this1 be3 could2 good4'))
+print('\n\n\n')
+    
+
 #Find the difference question 389
 class Solution(object):
     """
@@ -26,7 +54,7 @@ class Solution(object):
 
 
 sol = Solution()
-print("--find the difference--"))
+print("--find the difference--")
 sol.findTheDifference("abce", "abc")
 print('\n\n\n')
 
