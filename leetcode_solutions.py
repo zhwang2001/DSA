@@ -3,6 +3,50 @@
 #implement pseudo code
 #implement real code
 
+#Count Asterisks question 2315
+class Solution(object):
+    """
+    You are given a string s, where every two consecutive vertical bars '|' 
+    are grouped into a pair. In other words, the 1st and 2nd '|' make a pair, the 3rd and 4th '|' 
+    make a pair, and so forth.
+    Return the number of '*' in s, excluding the '*' between each pair of '|'.
+    Note that each '|' will belong to exactly one pair.
+    """
+
+    def countAsterisks(self, s):
+        """
+        :type s: str
+        :rtype: int
+
+        O(N) time complexity
+        O(1) space complexity
+        """
+        count = 0
+        barcounter = 0
+        for bar in s:
+            if bar == "|":
+                barcounter += 1
+            if barcounter == 0 and bar == "*":
+                count += 1
+            elif barcounter == 2:
+                barcounter = 0
+        return count
+
+    def splitcount(self, s): #second solution faster
+        splitted = s.split('|')[::2]
+        counted = 0
+        for section in splitted:
+            counted += section.count("*")
+        return counted 
+
+
+sol = Solution()
+print("--Count Asterisks--")
+print(sol.countAsterisks("l|*e*et|c**o|*de|"))
+print('--solution 2--')
+print(sol.splitcount("l|*e*et|c**o|*de|"))
+print('\n\n\n')
+
 
 #Sorting the Sentence question 1859
 class Solution(object):
@@ -59,7 +103,7 @@ sol.findTheDifference("abce", "abc")
 print('\n\n\n')
 
 
-
+#shuffle string question 1528
 class Solution(object):
     """
     You are given a string s and an integer array indices of the same length. 
