@@ -11,6 +11,7 @@ class Solution(object):
     make a pair, and so forth.
     Return the number of '*' in s, excluding the '*' between each pair of '|'.
     Note that each '|' will belong to exactly one pair.
+
     """
 
     def countAsterisks(self, s):
@@ -33,6 +34,13 @@ class Solution(object):
         return count
 
     def splitcount(self, s): #second solution faster
+        """
+        18ms, faster than 97.31% of python submissions
+        13.3Mb, less than 83.41% of python submissions
+
+        O(N) time complexity
+        O(1) space complexity
+        """
         splitted = s.split('|')[::2]
         counted = 0
         for section in splitted:
