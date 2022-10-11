@@ -33,7 +33,6 @@ print(sol.restoreString("codeleet", [4,5,6,7,0,2,1,3]))
 print(sol.restoreString("abc",[0,1,2]))
 print('\n\n\n')
 
-exit()
 #Maximum Number of Words found in sentences question 2114
 class Solution(object):
     """
