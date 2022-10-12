@@ -4,6 +4,57 @@
 #implement real code
 
 
+
+#Finbonaci number question 509
+class Solution(object):
+    """
+    The Fibonacci numbers, commonly denoted F(n) 
+    form a sequence, called the Fibonacci sequence, such that each 
+    number is the sum of the two preceding ones, starting from 0 and 1. That is,
+
+    n refers to the index within the fibonnaci sequence
+    """
+    def fib(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        ans = [0, 1]
+        if n <= 1:
+            return n
+        for i in range(1, n):
+            ans.append(ans[i] + ans[i - 1])
+        return ans[-1]
+
+    def fasterfib(self, n):
+        """
+        O(N) time complexity
+        O(1) Space complexity
+        """
+        if n <= 1:
+            return n
+        prev, ans = 0, 1
+        for i in range(1, n):
+            oldans = ans
+            ans += prev
+            prev = oldans
+        return ans
+        #[0,1,1,2,3,5,8,13...]
+        
+
+sol = Solution()
+print('--fibonacci number--')
+print(sol.fib(3))
+print(sol.fib(45))
+print(sol.fib(5))
+print(sol.fib(32))
+print(sol.fasterfib(3))
+print(sol.fasterfib(45))
+print(sol.fasterfib(5))
+print(sol.fasterfib(32))
+print('\n\n\n')
+
+exit()
 #Goal Parser Interpretation Question 1678
 class Solution(object):
     """ 
