@@ -3,6 +3,34 @@
 #implement pseudo code
 #implement real code
 
+
+#Goal Parser Interpretation Question 1678
+class Solution(object):
+    """ 
+    You own a Goal Parser that can interpret a string command. The command consists of an 
+    alphabet of "G", "()" and/or "(al)" in some order. The Goal Parser will interpret "G" as the 
+    string "G", "()" as the string "o", and "(al)" as the string "al". The interpreted strings are then concatenated in the original order.
+    Given the string command, return the Goal Parser's interpretation of command.
+    """
+    def interpret(self, command):
+        """
+        :type command: str
+        :rtype: str
+        
+        O(N) time complexity
+        """
+        
+        return command.replace("()","o").replace("(al)","al")
+        #first = command.replace("()", "o")#doesnt actually change command string
+        #second = first.replace("(al)","al")
+        #return second
+        
+sol = Solution()
+print("--Goal Parser interpretation--")
+print(sol.interpret("G()(al)"))
+print(sol.interpret("G()()()()()()()()()()()(al)lllllllllllllllllllllllllllllll"))
+print('\n\n\n')
+
 #Count Asterisks question 2315
 class Solution(object):
     """
