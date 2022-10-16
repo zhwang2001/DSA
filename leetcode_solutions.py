@@ -4,6 +4,40 @@
 #implement real code
 
 
+#count the number of consistent strings question 1684
+class Solution(object):
+    """
+    You are given a string allowed consisting of distinct characters and an array of strings words. A string is consistent if all characters in the string appear in the string allowed.
+    Return the number of consistent strings in the array words.
+
+    Input: allowed = "ab", words = ["ad","bd","aaab","baa","badab"]
+    Output: 2
+    Explanation: Strings "aaab" and "baa" are consistent since they only contain characters 'a' and 'b'.
+    """
+    def countConsistentStrings(self, allowed, words):
+        """
+        :type allowed: str
+        :type words: List[str]
+        :rtype: int
+        
+        O(N^2) time complexity
+        space complexity is O(1)
+        """
+        length = len(words)
+        for word in words:
+            for letters in word:
+                if letters not in set(allowed):
+                    length -= 1
+                    break #the trick is to use break as soon as the algo sees a letter that isn't supposed to be there
+        return length
+                        
+
+
+sol = Solution()
+print('--Count consistent strings--')
+print(sol.countConsistentStrings("ab", words = ["ad","bd","aaab","baa","badab"]))
+print(sol.countConsistentStrings("cad", words = ["cc","acd","b","ba","bac","bad","ac","d"]))
+print('\n\n\n')
 
 #Counting words with a given prefix question 2185
 class Solution(object):
