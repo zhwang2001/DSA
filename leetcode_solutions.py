@@ -3,6 +3,36 @@
 #implement pseudo code
 #implement real code
 
+#Richest customer wealth question 1672
+class Solution(object):
+    """
+    You are given an m x n integer grid accounts where accounts[i][j] 
+    is the amount of money the ith customer has in the jth bank. Return the wealth that the richest customer has.
+    A customer's wealth is the amount of money they have in all their bank accounts. 
+    The richest customer is the customer that has the maximum wealth.
+    
+    Input: accounts = [[1,2,3],[3,2,1]]
+    Output: 6
+    """
+    def maximumWealth(self, accounts):
+        """
+        :type accounts: List[List[int]]
+        :rtype: int
+        
+        O(N) is time complexity
+        O(1) is space complexity
+        """
+        maxi = 0
+        for customer in accounts:
+            maxi = max(maxi, sum(customer))
+        return maxi
+
+sol = Solution()
+print('--Richest Customer Wealth--')
+print(sol.maximumWealth([[1,2,3],[3,2,1]]))
+print(sol.maximumWealth([[1,5],[7,3],[3,5]]))
+print('\n\n\n')
+
 
 #shuffle the array question 1470
 class Solution(object):
