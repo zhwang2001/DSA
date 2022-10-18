@@ -4,6 +4,59 @@
 #implement real code
 
 
+#shuffle the array question 1470
+class Solution(object):
+    """
+    Given the array nums consisting of 2n elements in the form [x1,x2,...,xn,y1,y2,...,yn].
+    Return the array in the form [x1,y1,x2,y2,...,xn,yn].
+    
+    Input: nums = [2,5,1,3,4,7], n = 3
+    Output: [2,3,5,4,1,7] 
+    Explanation: Since x1=2, x2=5, x3=1, y1=3, y2=4, y3=7 then the answer is [2,3,5,4,1,7].
+    """
+    def shuffle(self, nums, n):
+        """
+        :type nums: List[int]
+        :type n: int
+        :rtype: List[int]
+        
+        O(N) time complexity
+        O(1) space complexity
+        """
+        #Explanation
+        Array = [0]*(2*n) #creates an array with 2 times n elements
+        list1 = nums[:n]
+        list2 = nums[n:]
+        #2 pointers
+        i = 0 #traverses list1 and list2 at i
+        pos = 0#traverses Array at 2i
+        while i != n: #the trick is to write the ith item in first list and fth item in second list in one iteration
+            Array[pos] = list1[i]
+            Array[pos + 1] = list2[i]
+            i += 1
+            pos += 2
+        return Array
+    
+        #faster method with just 1 variable
+        array = [0]*(2*n)
+        list1, list2 = nums[:n], nums[n:]
+        i = 0
+        while i != n:
+            array[i*2] = list1[i]
+            array[i*2 + 1] = list2[i]
+            i += 1
+        return array
+
+
+
+sol = Solution()
+print('--shuffle the array--')
+print(sol.shuffle([2,5,1,3,4,7], 3))
+print(sol.shuffle([4,1,3,5,6,7,8,2,2,3], 5))
+print('\n\n\n')
+
+
+
 #count the number of consistent strings question 1684
 class Solution(object):
     """
