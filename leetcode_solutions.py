@@ -54,8 +54,8 @@ class Solution(object):
         :type accounts: List[List[int]]
         :rtype: int
         
-        O(N) is time complexity
-        O(1) is space complexity
+        O(N) time complexity
+        O(1) space complexity
         """
         maxi = 0
         for customer in accounts:
