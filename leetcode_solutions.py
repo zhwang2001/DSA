@@ -3,6 +3,41 @@
 #implement pseudo code
 #implement real code
 
+
+
+#Reverse Words in a String III question 557
+class Solution(object):
+    """
+    Given a string s, reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.
+
+    Example 1:
+
+    Input: s = "Let's take LeetCode contest"
+    Output: "s'teL ekat edoCteeL tsetnoc"
+    """
+    def reverseWords(self, s):
+        """
+        :type s: str
+        :rtype: str
+        
+        O(N) time complexity
+        O(N) space complexity
+        """        
+        return ' '.join([word[::-1] for word in s.split(' ')])
+        """
+        arr = []
+        splitted = s.split(' ')
+        for i in splitted:
+            arr.append(i[::-1])
+        return ' '.join(arr)
+        """
+
+sol = Solution()
+print('reverseWords')
+print(sol.reverseWords("there's no place like home"))
+print(sol.reverseWords("I need a job desperately"))
+print('\n\n\n')
+
 #Richest customer wealth question 1672
 class Solution(object):
     """
