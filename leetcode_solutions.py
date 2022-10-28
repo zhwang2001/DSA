@@ -4,6 +4,24 @@
 #implement real code
 
 
+class Solution(object):
+
+    def increasing(self, nums):
+        count = 0
+        i = 0
+        length = len(nums)
+        while i != length:
+            if nums[i] < nums[i - 1]:
+                count += 1
+            i += 1
+        return count == 1
+
+print('-remove one elemnt to make the array strictly increasing-')
+sol = Solution()
+print(sol.increasing([1,2,3,4,5,1,2,3,4]))
+print(sol.increasing([1,2,3,2,1,8]))
+print('\n\n\n')
+
 
 #Reverse Words in a String III question 557
 class Solution(object):
