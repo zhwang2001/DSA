@@ -3,25 +3,32 @@
 #implement pseudo code
 #implement real code
 
-
+#Find the highest altitude question 1732
 class Solution(object):
+    """
+    There is a biker going on a road trip. The road trip consists of n + 1 points at different altitudes. The biker starts his trip on point 0 with altitude equal 0.
+    You are given an integer array gain of length n where gain[i] is the net gain in altitude between points i​​​​​​ and i + 1 for all (0 <= i < n). Return the highest altitude of a point.
+    """
+    def largestAltitude(self, gain):
+        """
+        :type gain: List[int]
+        :rtype: int
 
-    def increasing(self, nums):
-        count = 0
-        i = 0
-        length = len(nums)
-        while i != length:
-            if nums[i] < nums[i - 1]:
-                count += 1
-            i += 1
-        return count == 1
+        O(N) run time complexity
+        O(1) space time complexity
+        """
+        maxi = 0
+        altitude = 0
+        for i in gain:
+            altitude += i
+            maxi = max(maxi, altitude)
+        return maxi
 
-print('-remove one elemnt to make the array strictly increasing-')
 sol = Solution()
-print(sol.increasing([1,2,3,4,5,1,2,3,4]))
-print(sol.increasing([1,2,3,2,1,8]))
+print('--Find the Highest Altitude--')
+print(sol.largestAltitude([-5,1,15,-7]))
+print(sol.largestAltitude([-4,-3,-2,-1,4,3,2]))
 print('\n\n\n')
-
 
 #Reverse Words in a String III question 557
 class Solution(object):
