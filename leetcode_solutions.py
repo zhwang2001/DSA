@@ -3,6 +3,29 @@
 #implement pseudo code
 #implement real code
 
+#Find Numbers with Even Number of Digits question 1295
+class Solution(object):
+    """
+    Given an array nums of integers, return how many of them contain an even number of digits.
+    """
+    def findNumbers(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        count = 0
+        for i in nums:
+            if (len(str(i)) % 2) == 0:
+                count += 1
+        return count
+
+sol = Solution()
+print('--Find numbers with even number of digitts--')
+print(sol.findNumbers([12,34423,23423,1,2,2,34,1,4,5,2,34,2,3,2,4234234,232,1,3]))
+print(sol.findNumbers([12,3,4,4,44444444444444444444444444444444,4,4,4,2,3]))
+print('\n\n\n')
+
+
 #Find the highest altitude question 1732
 class Solution(object):
     """
