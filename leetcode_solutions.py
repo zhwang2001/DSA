@@ -3,6 +3,33 @@
 #implement pseudo code
 #implement real code
 
+#Percentage of letter in string question 2278
+class Solution(object):
+    """
+    Given a string s and a character letter, return the percentage of characters in s that equal letter rounded down to the nearest whole percent
+    """
+    def percentageLetter(self, s, letter):
+        """
+        :type s: str
+        :type letter: str
+        :rtype: int
+
+        O(N) time complexity
+        O(1) space complexity
+        """
+        count = 0
+        for char in s:
+            if char == letter:
+                count += 1
+        return f"{int(float(count) / len(s) * 100)}%" #can divide float by int and get float, convert final answer back into into to remove decimals
+
+
+sol = Solution()
+print('--Percentage of letter in string--')
+print(sol.percentageLetter('ksdf', 'k'))
+print(sol.percentageLetter('IloveNYC', 'Y'))
+print('\n\n\n')
+
 #Find Numbers with Even Number of Digits question 1295
 class Solution(object):
     """
@@ -12,6 +39,9 @@ class Solution(object):
         """
         :type nums: List[int]
         :rtype: int
+
+        O(N) time complexity
+        O(1) space complexity
         """
         count = 0
         for i in nums:
