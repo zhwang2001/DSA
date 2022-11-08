@@ -3,6 +3,56 @@
 #implement pseudo code
 #implement real code
 
+
+#Overlap Intervals question 2623
+class Solution(object):
+    def overlap(self, intervals, rate, person):
+        """
+        :type intervals: List[List[int]]
+        :rtype: List[List[int]]
+        """
+        """
+        [[1,7],[2,9],[3,4]]
+
+        Person's A:
+        1-2 = 10 dollars
+        2-3 = 5 dollars
+        3-4 = 3.33 dollars
+        4-5 = 5 dollars
+        5-6 = 5 dollars
+        6-7 = 5 dollars
+
+        28 dollars and 33 cents
+        60 dollars
+        """
+        count = 1
+        new_cost = 0
+        record = intervals[person]
+        intervals.pop(person)
+        for integer in range(record[0], record[1]):
+            for compare in intervals:
+                if integer < compare[1] and integer >= compare[0]:
+                    count += 1
+            new_cost += rate / count
+            count = 1
+        print(f"You save {rate * (record[1] - record[0]) - new_cost}")
+        return new_cost
+
+
+sol = Solution()
+print('--Overlap intervals--')
+print(sol.overlap(intervals=[[1, 7], [2, 9], [3, 4]], rate=10, person=0))
+print(sol.overlap(intervals=[[1, 6], [4, 8], [3, 9]], rate=6, person=2))
+print(sol.overlap(intervals=[[1, 6], [4, 8], [3, 9]], rate=6, person=2))
+print(sol.overlap(intervals=[[10, 22], [
+      10, 22], [10, 22]], rate=500, person=2))
+
+print(sol.overlap(intervals=[[3, 5], [1, 9], [4, 24]], rate=500, person=2))
+print(sol.overlap(intervals=[[3, 5], [1, 9], [
+      4, 24], [3, 6], [1, 7]], rate=500, person=2))
+
+print('\n\n\n')
+
 #Percentage of letter in string question 2278
 class Solution(object):
     """
