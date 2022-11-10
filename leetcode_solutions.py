@@ -32,7 +32,7 @@ class Solution(object):
         """
         count = 0
         for i in arr:
-            if arr.count(i) == 1:
+            if arr.count(i) == 1: #the trick is to use count method
                 count += 1
                 if count == k:
                     return i
