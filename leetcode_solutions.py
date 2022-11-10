@@ -3,6 +3,39 @@
 #implement pseudo code
 #implement real code
 
+#Split a string in balanced strings question 1221
+class Solution(object):
+    """
+    Balanced strings are those that have an equal quantity of 'L' and 'R' characters.
+
+    Given a balanced string s, split it into some number of substrings such that:
+
+    Each substring is balanced.
+    Return the maximum number of balanced strings you can obtain.
+    """
+    def balancedStringSplit(self, s):
+        """
+        :type s: str
+        :rtype: int
+
+        O(N) Time complexity
+        O(1) Space complexity
+        """
+        count, balanced_string = 0,0
+        for i in s:
+            if i == "R":
+                count += 1
+            elif i == "L":
+                count -= 1
+            if count == 0:
+                balanced_string += 1
+        return balanced_string
+        
+sol = Solution()
+print('split a string in balanced strings')
+print(sol.balancedStringSplit("RLRLRRRRLLLLRLLR"))
+print(sol.balancedStringSplit("LLLLRRRR"))
+print('\n\n\n')
 
 #Overlap Intervals question 2623
 class Solution(object):
