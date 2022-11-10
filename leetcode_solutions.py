@@ -3,6 +3,49 @@
 #implement pseudo code
 #implement real code
 
+
+#Kth distinct string in an array question 2053
+class Solution(object):
+    """
+    A distinct string is a string that is present only once in an array.
+
+    Given an array of strings arr, and an integer k, return the kth distinct string present in arr. If there are fewer than k distinct strings, return an empty string "".
+
+    Note that the strings are considered in the order in which they appear in the array.
+
+    Input: arr = ["d","b","c","b","c","a"], k = 2
+    Output: "a"
+    Explanation:
+    The only distinct strings in arr are "d" and "a".
+    "d" appears 1st, so it is the 1st distinct string.
+    "a" appears 2nd, so it is the 2nd distinct string.
+    Since k == 2, "a" is returned. 
+    """
+    def kthDistinct(self, arr, k):
+        """
+        :type arr: List[str]
+        :type k: int
+        :rtype: str
+
+        O(N) time complexity
+        O(1) space complexity
+        """
+        count = 0
+        for i in arr:
+            if arr.count(i) == 1:
+                count += 1
+                if count == k:
+                    return i
+
+        return ""
+
+sol = Solution()
+print('--Kth distinct string in an array--')
+print(sol.kthDistinct(["d","b","c","b","c","a"], k = 2))
+print(sol.kthDistinct(["a","b","a"], k=3))
+print(sol.kthDistinct(arr = ["aaa","aa","a"], k = 1))
+print('\n\n\n')
+
 #Split a string in balanced strings question 1221
 class Solution(object):
     """
