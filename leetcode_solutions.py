@@ -18,7 +18,7 @@ class Solution(object):
         :type s: str
         :rtype: int
 
-        O(N) Time complexity
+        O(N) linear time complexity
         O(1) Space complexity
         """
         count, balanced_string = 0,0
