@@ -3,7 +3,20 @@
 #implement pseudo code
 #implement real code
 
-#Maximum product of two elements in an Array
+#Create Target array in the given order question 1389
+class Solution(object):
+    def createTargetArray(self, nums, index):
+        """
+        :type nums: List[int]
+        :type index: List[int]
+        :rtype: List[int]
+        """
+        arr = []
+        for n,i in zip(nums,index): #use zip function to iterate through 2 lists at once
+            arr[i:i] = [n] #use slicing so we don't get list out of range index error, replaces insert method
+        return arr
+
+#Maximum product of two elements in an Array question 1464
 class Solution:
     """
     Given the array of integers nums, you will choose two different
