@@ -3,6 +3,28 @@
 #implement pseudo code
 #implement real code
 
+#Maximum product of two elements in an Array
+class Solution:
+    """
+    Given the array of integers nums, you will choose two different
+    indices i and j of that array. Return the maximum value of (nums[i]-1)*(nums[j]-1).
+    """
+    def maxProduct(self, nums) -> int:
+        """
+        O(N) = time complexity
+        O(N) = space complexity
+        """
+        num1 = max(nums)
+        nums.remove(num1)
+        num2 = max(nums)
+        return (num1 - 1) * (num2 - 1)
+
+
+sol = Solution()
+print("--Max Product--")
+print(sol.maxProduct([3,4,5,2]))
+print(sol.maxProduct([1,5,4,5]))
+print('\n\n\n')
 
 #Overlap Intervals question 2623
 class Solution(object):
