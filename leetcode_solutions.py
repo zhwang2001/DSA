@@ -3,6 +3,99 @@
 #implement pseudo code
 #implement real code
 
+
+#Tricks
+"""
+1. array.insert(i) = array[i:i] = number
+2. 2 arrays: nums, nums2
+    - Can use zip function to iterate through both at the same time (zip is O(1)
+    - for a, b in zip(nums1, nums2)
+        print(a, b)
+3. Nested array [[1,2,3],[1,2,3].[3,2,4]] can be unwrapped using for loop
+    - for a,b,c in array:
+        print(a, b, c)
+"""
+
+#Count items matching a rule question 1773
+class Solution(object):
+    """
+    You are given an array items, where each items[i] = [typei, colori, namei] describes the type, color, and name of the ith item. You are also given a rule represented by two strings, ruleKey and ruleValue.
+
+    The ith item is said to match the rule if one of the following is true:
+
+    ruleKey == "type" and ruleValue == typei.
+    ruleKey == "color" and ruleValue == colori.
+    ruleKey == "name" and ruleValue == namei.
+    Return the number of items that match the given rule.
+    """
+
+    def countMatches(self, items, ruleKey, ruleValue):
+        """
+        :type items: List[List[str]]
+        :type ruleKey: str
+        :type ruleValue: str
+        :rtype: int
+
+        O(N) time complexity
+        O(1) space complexity
+        """
+        count = 0
+        dic = {"type": 0, "color": 1, "name": 2}
+        for i in range(len(items)):
+            if items[i][dic[ruleKey]] == ruleValue:
+                count += 1
+        return count
+
+sol = Solution()
+print('-- Count items matching a rule--')
+print(sol.countMatches(items = [["phone","blue","pixel"],["computer","silver","lenovo"],["phone","gold","iphone"]], ruleKey = "color", ruleValue = "silver"))
+print('\n\n\n')
+
+
+#Find Target indices after sorting array question 2089
+class Solution(object):
+    """
+    You are given a 0-indexed integer array nums and a target element target.
+
+    A target index is an index i such that nums[i] == target.
+
+    Return a list of the target indices of nums after sorting nums in non-decreasing order. If there are no target indices, return an empty list. The returned list must be sorted in increasing order.
+    """
+    def targetIndices(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        #Slow Solution
+        #O(nlogn) time complexity
+        #O(n) space complexity
+
+        ans = []
+        nums.sort()
+        for count, i in enumerate(nums):
+            if i == target:
+                ans.append(count)
+        return ans
+
+        #Faster Solution
+        #O(N) time complexity
+        #O(N) space complexity
+
+        index, count = 0, 0
+        for i in nums:
+            if i < target:
+                index += 1
+            elif i == target:
+                count += 1
+        return list(range(index, count+index))
+        
+sol = Solution()
+print('-- Find Target indicies after sorting array--')
+print(sol.targetIndices([1,2,5,2,3], target = 2))
+print(sol.targetIndices([1,2,5,2,3], target = 5))
+print('\n\n\n')
+
 #Create Target array in the given order question 1389
 class Solution(object):
     def createTargetArray(self, nums, index):
